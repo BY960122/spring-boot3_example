@@ -1,0 +1,38 @@
+spring:
+  datasource:
+    mysql1:
+      username: root
+      password: By96o122
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://127.0.0.1:3306/springboot?serverTimezone=Asia/Shanghai
+    mysql2:
+      username: root
+      password: By96o122
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://127.0.0.1:3306/mysql?serverTimezone=Asia/Shanghai
+    mongodb:
+      username: root
+      password: By96o122
+      url: mongodb://root:By96o122@127.0.0.1:27017/spring_test?authSource=admin
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    username:
+    password:
+    jedis:
+      pool:
+        max-active: 8
+        max-idle: 8
+        min-idle: 0
+        max-wait: -1
+    timeout: 30000
+
+elasticsearch:
+  host: "127.0.0.1"
+  #  host: "192.168.1.203"
+  port: 9200
+  connectTimeout: 5000
+  socketTimeout: 5000
+  maxConnectNum: 100
+  maxConnectPerRoute: 100
+  connectionRequestTimeout: 5000

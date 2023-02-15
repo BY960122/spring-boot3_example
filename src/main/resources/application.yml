@@ -1,0 +1,49 @@
+# keytool -genkey -alias tomcat -keyalg RSA -keystore C:\WorkSpace\spring-boot_example\src\main\resources\javastack.keystore
+server:
+  port: 7443
+  http-port: 8090
+  http2:
+    enabled: true
+  undertow:
+    io-threads: 16
+    worker-threads: 256
+    buffer-size: 1024
+    buffers-per-region: 1024
+    direct-buffers: true
+  ssl:
+    protocol: TLS
+    key-store: classpath:javastack.keystore
+    key-store-password: By96o122
+    key-store-type: JKS
+
+spring:
+  application:
+    name: BYDylan
+
+# 整合mybaitis
+mybatis:
+  mapper-locations: classpath:com/example/dao/mapper/*.xml
+  configuration:
+    cache-enabled: true
+    lazy-loading-enabled: true
+    log-prefix: dao.
+    log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl
+    map-underscore-to-camel-case: true
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+#  config-location: classpath:mybatis-config.xml
+
+# 消除一个告警
+# logging.level.org.springframework.data.convert.CustomConversions: ERROR
+
+person:
+  lastName: hello
+  age: 18
+  boss: false
+  birth: 2021/12/22
+  maps: { k1:v1,k2:v2 }
+  lists:
+    - list1
+    - list2
+  dog:
+    name: dog
+    age: 3

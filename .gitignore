@@ -1,0 +1,4 @@
+# Project exclude paths
+/log/
+/target/
+spring-boot_example.iml

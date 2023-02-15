@@ -1,0 +1,29 @@
+### 实体类注入
+GET https://127.0.0.1:7443/test/model
+Authorization: test
+
+### mongodb
+GET https://127.0.0.1:7443/test/mongodb
+
+### mysql 多数据源
+GET http://127.0.0.1:8090/test/mysql
+
+### 异常
+GET https://127.0.0.1:7443/test/exception
+
+### 参数校验
+POST https://127.0.0.1:7443/test/validation
+Content-Type: application/json
+
+{
+  "age": 12,
+  "name": ""
+}
+
+### 异步执行
+POST https://127.0.0.1:7443/test/async?count=100
+Content-Type: application/json
+
+### 事件消费
+POST https://127.0.0.1:7443/test/event?count=10
+Content-Type: application/json
