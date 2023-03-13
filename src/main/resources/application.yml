@@ -19,6 +19,12 @@ server:
 spring:
   application:
     name: BYDylan
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+    default-property-inclusion: non_empty
+    # 返回参数将驼峰转换为下划线
+    property-naming-strategy: SNAKE_CASE
 
 # 整合mybaitis
 mybatis:

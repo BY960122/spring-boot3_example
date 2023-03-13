@@ -1,6 +1,9 @@
 package com.example.config;
 
+import java.util.List;
+
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
@@ -23,5 +26,13 @@ public class WebMvcConfig implements WebMvcConfigurer {
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(loginInterceptor).addPathPatterns("/testEntity");
         WebMvcConfigurer.super.addInterceptors(registry);
+    }
+
+    /**
+     * @param resolvers 配置入参转换器 - 重写HTTP请求参数转换规则(前端请求参数为下划线类型,自动转换为驼峰形式进行对象参数封装)
+     */
+    @Override
+    public void addArgumentResolvers(List<HandlerMethodArgumentResolver> resolvers) {
+        resolvers.add(new CustomServletModelAttributeMethodProcessor(true));
     }
 }
