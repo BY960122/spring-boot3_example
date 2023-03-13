@@ -16,7 +16,7 @@ import jakarta.servlet.ServletRequest;
  *               将bind方法替换为我们自定义的CustomServletRequestDataBinder
  */
 public class CustomServletModelAttributeMethodProcessor extends ServletModelAttributeMethodProcessor {
-    public CustomServletModelAttributeMethodProcessor(final boolean annotationNotRequired) {
+    CustomServletModelAttributeMethodProcessor(final boolean annotationNotRequired) {
         super(annotationNotRequired);
     }
 

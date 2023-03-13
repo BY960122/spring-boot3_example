@@ -22,7 +22,7 @@ public class CustomServletRequestDataBinder extends ServletRequestDataBinder {
 
     private final Pattern underLinePattern = Pattern.compile("_(\\w)");
 
-    public CustomServletRequestDataBinder(final Object target) {
+    CustomServletRequestDataBinder(final Object target) {
         super(target);
     }
 
