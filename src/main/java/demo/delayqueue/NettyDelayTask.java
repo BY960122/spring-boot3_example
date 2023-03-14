@@ -1,7 +1,7 @@
 package demo.delayqueue;
 
 
-import com.example.tools.TimeTool;
+import com.example.tool.TimeTools;
 import io.netty.util.HashedWheelTimer;
 import io.netty.util.TimerTask;
 import org.slf4j.Logger;
@@ -18,11 +18,11 @@ public class NettyDelayTask {
         // 初始化netty时间轮
         HashedWheelTimer timer = new HashedWheelTimer(1, TimeUnit.SECONDS, 10);
 
-        TimerTask task1 = timeout -> LOGGER.info("already passed {} second, start task1.",TimeTool.costTime(startTime));
+        TimerTask task1 = timeout -> LOGGER.info("already passed {} second, start task1.", TimeTools.costTime(startTime));
 
-        TimerTask task2 = timeout -> LOGGER.info("already passed {} second, start task2.",TimeTool.costTime(startTime));
+        TimerTask task2 = timeout -> LOGGER.info("already passed {} second, start task2.", TimeTools.costTime(startTime));
 
-        TimerTask task3 = timeout -> LOGGER.info("already passed {} second, start task3.",TimeTool.costTime(startTime));
+        TimerTask task3 = timeout -> LOGGER.info("already passed {} second, start task3.", TimeTools.costTime(startTime));
 
         // 将任务添加到延迟队列
         timer.newTimeout(task1, 0, TimeUnit.SECONDS);

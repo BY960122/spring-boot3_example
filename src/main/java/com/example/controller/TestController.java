@@ -16,8 +16,8 @@ import com.example.mapper.MongoMapper;
 import com.example.mapper.MysqlMapper;
 import com.example.model.*;
 import com.example.service.AsyncService;
-import com.example.tools.JsonTool;
-import com.example.tools.SpringTool;
+import com.example.tool.JsonTools;
+import com.example.tool.SpringTools;
 
 import jakarta.validation.Valid;
 
@@ -44,7 +44,7 @@ public class TestController {
 
     @GetMapping("/test/model")
     public Object testEntity() {
-        LOGGER.info("person model: {}", JsonTool.toJsonString(personModel));
+        LOGGER.info("person model: {}", JsonTools.toJsonString(personModel));
         Map<Object, Object> responseMap = new HashMap<>();
         responseMap.put("content", "test");
         responseMap.put("entity", personModel);
@@ -99,7 +99,7 @@ public class TestController {
             orderModel.setAmount(100L);
             // 发布Spring事件通知
             LOGGER.info("product event id: {}", orderModel.getOrderId());
-            SpringTool.getApplicationContext().publishEvent(new OrderEvent(orderModel));
+            SpringTools.getApplicationContext().publishEvent(new OrderEvent(orderModel));
         }
         return GlobalResponseModel.setResponse(GlobalResponseEnum.SUCCESS);
     }

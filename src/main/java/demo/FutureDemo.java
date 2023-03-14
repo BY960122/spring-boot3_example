@@ -1,6 +1,6 @@
 package demo;
 
-import com.example.tools.TimeTool;
+import com.example.tool.TimeTools;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -26,7 +26,7 @@ public class FutureDemo {
         }
         LOGGER.info("submit end.");
         while (atomicInteger.get() < 10) {
-            TimeTool.sleep(TimeTool.ONE_SEC_MILLIS);
+            TimeTools.sleep(TimeTools.ONE_SEC_MILLIS);
         }
         LOGGER.info("exec end.");
         executor.shutdown();
@@ -34,7 +34,7 @@ public class FutureDemo {
 
     private static void execTask(int taskId, AtomicInteger atomicInteger) {
         LOGGER.info("submit task id: {}.", taskId);
-        TimeTool.sleep(TimeTool.TEN_SEC_MILLIS);
+        TimeTools.sleep(TimeTools.TEN_SEC_MILLIS);
         atomicInteger.incrementAndGet();
         LOGGER.info("exec task id: {} end.", taskId);
     }

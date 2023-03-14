@@ -1,4 +1,4 @@
-package com.example.tools;
+package com.example.tool;
 
 import java.lang.reflect.Array;
 import java.util.Objects;
@@ -9,11 +9,11 @@ import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Component;
 
 @Component
-public final class SpringTool implements ApplicationContextAware {
+public final class SpringTools implements ApplicationContextAware {
 
     private static ApplicationContext context;
 
-    private SpringTool() {}
+    private SpringTools() {}
 
     public static <T> T getBean(Class<T> clazz) {
         if (Objects.isNull(context) || Objects.isNull(clazz)) {

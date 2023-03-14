@@ -1,4 +1,4 @@
-package com.example.tools;
+package com.example.tool;
 
 import java.time.Instant;
 import java.time.LocalDateTime;
@@ -10,7 +10,7 @@ import java.time.format.DateTimeFormatter;
  * @date: 2022/10/17
  * @description:
  */
-public class TimeTool {
+public class TimeTools {
 
     public static final long ONE_SEC_MILLIS = 1000;
     public static final long TWO_SEC_MILLIS = 2 * ONE_SEC_MILLIS;

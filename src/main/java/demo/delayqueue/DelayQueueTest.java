@@ -1,7 +1,7 @@
 package demo.delayqueue;
 
 
-import com.example.tools.TimeTool;
+import com.example.tool.TimeTools;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -39,7 +39,7 @@ public class DelayQueueTest {
             for (int index = 1; index < 6; index++) {
                 delayQueue.add(new DelayTask(delaySecond, index + ""));
                 LOGGER.info("product delay task id: {}", index);
-                TimeTool.sleep(TimeTool.ONE_SEC_MILLIS);
+                TimeTools.sleep(TimeTools.ONE_SEC_MILLIS);
             }
         }
     }
@@ -64,7 +64,7 @@ public class DelayQueueTest {
                 if (delayTask != null) {
                     LOGGER.info("comsumer delay task id: {}", delayTask.getId());
                 } else {
-                    TimeTool.sleep(TimeTool.ONE_SEC_MILLIS);
+                    TimeTools.sleep(TimeTools.ONE_SEC_MILLIS);
                 }
             }
         }

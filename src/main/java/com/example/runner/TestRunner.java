@@ -22,7 +22,7 @@ import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandl
 import org.springframework.web.util.pattern.PathPattern;
 
 import com.example.model.PersonModel;
-import com.example.tools.JsonTool;
+import com.example.tool.JsonTools;
 
 /**
  * @author: BYDylan
@@ -47,7 +47,7 @@ public class TestRunner implements ApplicationRunner, ApplicationContextAware {
 
     @Override
     public void run(ApplicationArguments args) {
-        LOGGER.info("test runner: {}", JsonTool.toJsonString(personModel));
+        LOGGER.info("test runner: {}", JsonTools.toJsonString(personModel));
         RequestMappingHandlerMapping mapping = applicationContext.getBean(RequestMappingHandlerMapping.class);
         Map<RequestMappingInfo, HandlerMethod> methodMap = mapping.getHandlerMethods();
         for (Map.Entry<RequestMappingInfo, HandlerMethod> entry : methodMap.entrySet()) {

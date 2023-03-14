@@ -6,7 +6,7 @@ import org.springframework.context.ApplicationListener;
 import org.springframework.stereotype.Component;
 
 import com.example.event.OrderEvent;
-import com.example.tools.JsonTool;
+import com.example.tool.JsonTools;
 
 /***
  * @author: BYDylan
@@ -19,6 +19,6 @@ public class OrderEventListener implements ApplicationListener<OrderEvent> {
 
     @Override
     public void onApplicationEvent(OrderEvent event) {
-        LOGGER.info("comsumer event: {}", JsonTool.toJsonString(event.getSource()));
+        LOGGER.info("comsumer event: {}", JsonTools.toJsonString(event.getSource()));
     }
 }

@@ -21,7 +21,7 @@
 | com.example.runner      | 自动启动模块     |
 | com.example.schedule    | 定时任务模块     |
 | com.example.service     | service层   |
-| com.example.tools       | 工具         |
+| com.example.tool       | 工具类        |
 | demo.jedis              | jedis demo |
 | likou                   | 力扣习题       |
 
@@ -34,7 +34,7 @@
 # 已实践功能
 
 * 1.参数验证
-* 2.全局异常处理,全局返回json
+* 2.全局异常处理,全局返回json,支持多个参数传入_格式
 * 3.动态数据源切换
 * 4.读取 yaml 配置
 * 5.mybatis sql 打印,数据库字段 1,2 映射为 java List<Integer>

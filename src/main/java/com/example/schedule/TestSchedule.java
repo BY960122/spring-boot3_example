@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 import com.example.annotation.CustomDataSource;
 import com.example.model.PersonModel;
-import com.example.tools.JsonTool;
+import com.example.tool.JsonTools;
 
 import net.javacrumbs.shedlock.spring.annotation.SchedulerLock;
 
@@ -31,6 +31,6 @@ public class TestSchedule {
     @SchedulerLock(name = "scheduler_shedlock_test", lockAtLeastFor = "PT1S", lockAtMostFor = "PT30S")
     @CustomDataSource()
     public void getEntity() {
-        LOGGER.info("test schedule: {}", JsonTool.toJsonString(personModel));
+        LOGGER.info("test schedule: {}", JsonTools.toJsonString(personModel));
     }
 }

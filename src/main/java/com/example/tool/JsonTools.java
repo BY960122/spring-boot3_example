@@ -1,4 +1,4 @@
-package com.example.tools;
+package com.example.tool;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -24,9 +24,9 @@ import com.fasterxml.jackson.databind.SerializationFeature;
  * @date: 2022/2/22
  * @description: Jackson 工具类
  */
-public class JsonTool {
+public class JsonTools {
     private static final ObjectMapper MAPPER = new ObjectMapper();
-    private static final Logger LOGGER = LoggerFactory.getLogger(JsonTool.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(JsonTools.class);
 
     static {
         MAPPER.configure(SerializationFeature.FAIL_ON_EMPTY_BEANS, false);
